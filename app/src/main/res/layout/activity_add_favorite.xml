@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddFavoriteActivity">
+
+
+    <TextView
+        android:id="@+id/txtLogin"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:text="Tambah Favorite"
+        android:layout_marginTop="50dp"
+        />
+
+    <RelativeLayout
+        android:layout_marginTop="150dp"
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/etJudul"
+            android:padding="10dp"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Judul FIlm"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <EditText
+            android:id="@+id/etDirector"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etJudul"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Director"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <EditText
+            android:id="@+id/etTanggalRilis"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etDirector"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal Rilis"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/etSinopsis"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etTanggalRilis"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Sinopsis"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/etLinkImage"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etSinopsis"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Link Gambar"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/container1"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnTambah"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Tambah ke Favorite"
+
+        />
+
+
+</RelativeLayout>
