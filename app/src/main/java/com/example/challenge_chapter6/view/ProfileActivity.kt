@@ -8,18 +8,15 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.text.set
 import androidx.lifecycle.asLiveData
 import com.example.challenge_chapter6.PreferencesLogin
-import com.example.challenge_chapter6.R
 import com.example.challenge_chapter6.databinding.ActivityProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
@@ -48,7 +45,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.btnLogout.setOnClickListener{
             GlobalScope.launch {
                 PreferencesLogin(this@ProfileActivity).clearData()
-                startActivity(Intent(this@ProfileActivity,LoginActivity::class.java))
+                startActivity(Intent(this@ProfileActivity, LoginActivity::class.java))
                 finish()
             }
         }

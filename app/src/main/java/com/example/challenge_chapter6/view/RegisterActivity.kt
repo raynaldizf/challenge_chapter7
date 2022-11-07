@@ -1,11 +1,10 @@
 package com.example.challenge_chapter6.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.challenge_chapter6.PreferencesLogin
-import com.example.challenge_chapter6.R
 import com.example.challenge_chapter6.databinding.ActivityRegisterBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

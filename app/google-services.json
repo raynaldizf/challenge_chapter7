@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:686412453714:android:21b2fcb5a5002c13928c8b",
         "android_client_info": {
-          "package_name": "com.example.challenge_chapter6"
+          "package_name": "com.example.challenge_chapter6.paid"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "686412453714-0po7mmgbobp70vt3k4qce1nnb13rs74n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.challenge_chapter6",
+            "package_name": "com.example.challenge_chapter6.paid",
             "certificate_hash": "6d908b5a1c6f7bacfc650cfe9855fc39879237ad"
           }
         },

@@ -1,24 +1,23 @@
 package com.example.challenge_chapter6.view
 
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
 import com.example.challenge_chapter6.MainActivity
 import com.example.challenge_chapter6.PreferencesLogin
 import com.example.challenge_chapter6.R
-import com.google.firebase.auth.FirebaseAuth
 import com.example.challenge_chapter6.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -27,29 +26,13 @@ class LoginActivity : AppCompatActivity() {
     lateinit var password: String
     lateinit var auth : FirebaseAuth
     lateinit var signGoogle : GoogleSignInClient
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-            result ->
-        if (result.resultCode == Activity.RESULT_OK){
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            results(task)
-        }
-    }
+    val requestCode : Int = 100
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        auth = FirebaseAuth.getInstance()
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        signGoogle = GoogleSignIn.getClient(this, gso)
-
-        binding.btnLoginGoogle.setOnClickListener{
-            signIn()
-        }
 
         sharedPrefs = PreferencesLogin(this)
         sharedPrefs.userName.asLiveData().observe(this, {
@@ -88,10 +71,31 @@ class LoginActivity : AppCompatActivity() {
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT))
 
+        binding.btnLoginGoogle.setOnClickListener{
+            FirebaseApp.initializeApp(this)
+            val gsos = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
+            signGoogle = GoogleSignIn.getClient(this, gsos)
+            auth = FirebaseAuth.getInstance()
+            Toast.makeText(this, "Login with Google", Toast.LENGTH_SHORT).show()
+            signIn()
+
+        }
     }
     fun signIn(){
-        val signinClient = signGoogle.signInIntent
-        launcher.launch(signinClient)
+        val signinClient : Intent = signGoogle.signInIntent
+        startActivityForResult(signinClient, requestCode)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==requestCode){
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            results(task)
+
+        }
     }
 
     fun results(task : Task<GoogleSignInAccount>){

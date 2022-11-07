@@ -26,7 +26,7 @@ class AddFavoriteActivity : AppCompatActivity() {
             val image = binding.etLinkImage.text.toString()
 
             addToFavorite(sinopsis,director,date,image,name)
-            val inten = Intent(this,FavoriteActivity::class.java)
+            val inten = Intent(this, FavoriteActivity::class.java)
             startActivity(inten)
 
         }

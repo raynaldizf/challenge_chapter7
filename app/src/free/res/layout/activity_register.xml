@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.RegisterActivity">
+
+
+    <TextView
+        android:id="@+id/txtRegister"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:text="Register"
+        android:layout_marginTop="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/imgRegis"
+        android:layout_below="@id/txtRegister"
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_below="@id/imgRegis"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:padding="10dp"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Username"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etUsername"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Email"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/etNamaLengkap"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etEmail"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Nama Lengkap"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/etAlamat"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etNamaLengkap"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Alamat"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/etTanggalLahir"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etAlamat"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="Tanggal Lahir"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_below="@id/etTanggalLahir"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Passowrd"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:layout_centerHorizontal="true"
+            android:inputType="textPassword"            />
+
+        <EditText
+            android:id="@+id/etPasswordConfirm"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etPassword"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Konfirmasi Passowrd"
+            app:passwordToggleEnabled="true"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:inputType="textPassword"
+
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/container1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnDaftar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

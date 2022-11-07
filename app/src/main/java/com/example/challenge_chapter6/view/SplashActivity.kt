@@ -1,13 +1,12 @@
 package com.example.challenge_chapter6.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
 import com.example.challenge_chapter6.MainActivity
 import com.example.challenge_chapter6.PreferencesLogin
-import com.example.challenge_chapter6.R
 import com.example.challenge_chapter6.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

@@ -27,15 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         setVMtoAdapter()
         binding.btnFavorite.setOnClickListener{
-            startActivity(Intent(this,FavoriteActivity::class.java))
+            startActivity(Intent(this, FavoriteActivity::class.java))
         }
 
         binding.btnAdd.setOnClickListener{
-            startActivity(Intent(this,AddMovieActivity::class.java))
+            startActivity(Intent(this, AddMovieActivity::class.java))
         }
 
         binding.btnProfile.setOnClickListener {
-            startActivity(Intent(this,ProfileActivity::class.java))
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         sharedPrefs.userName.asLiveData().observe(this,{

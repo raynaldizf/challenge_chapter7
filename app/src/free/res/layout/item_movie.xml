@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/btnDetail"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:text="Name Film"
+            android:layout_toEndOf="@id/image"
+            android:layout_marginStart="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis urna at ipsum viverra semper. Donec pulvinar, justo a faucibus luctus, orci turpis pellentesque felis, convallis porttitor dolor ante nec lorem."
+            android:layout_toEndOf="@id/image"
+            android:layout_below="@id/name"
+/>
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/btnAddToFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_heart_24"
+            android:layout_alignParentEnd="true"
+           android:layout_marginTop="130dp"
+
+
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
